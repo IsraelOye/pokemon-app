@@ -43,11 +43,11 @@ const PokemonListPage = () => {
     );
 
   return (
-    <div className="px-4 py-6 max-w-6xl mx-auto">
+    <div className="py-6 max-w-6xl mx-auto">
       <h1 className="text-2xl md:text-4xl text-blue-600 font-bold uppercase text-center mb-8">
         Pokemon Explorer
       </h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-7">
         {pokemonList.map((pokemon) => (
           <PokemonCard key={pokemon.id} pokemon={pokemon} />
         ))}

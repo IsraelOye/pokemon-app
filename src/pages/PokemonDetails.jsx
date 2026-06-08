@@ -16,7 +16,7 @@ const PokemonDetailsPage = () => {
     const fetchDetail = async () => {
       try {
         setLoading(true);
-        // Waits 1 second before fetching
+        // Waits 1 second before fetching to show the loading state
           await new Promise((resolve) => setTimeout(resolve, 1000));
         const data = await getPokemonDetails(id);
         setPokemon(data);
