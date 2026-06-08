@@ -6,7 +6,7 @@ function PokemonCard({ pokemon }) {
   return (
     <div className="text-white flex flex-col items-center">
       <span className="text-sm md:text-lg font-medium self-start">
-        #{String(pokemon.id).padStart(2, "0")}
+        {String(pokemon.id).padStart(2, "0")}
       </span>
       <p className="capitalize font-medium text-sm md:text-lg self-start">
         {pokemon.name}
@@ -15,7 +15,7 @@ function PokemonCard({ pokemon }) {
         <img
           src={image}
           alt={pokemon.name}
-          className="w-20 h-20 md:w-28 md:h-28 object-contain transition-transform duration-300 ease-in-out hover:scale-105"
+          className="w-28 h-28 md:w-60 md:h-60 object-contain transition-transform duration-300 ease-in-out hover:scale-105"
         />
       </Link>
     </div>
