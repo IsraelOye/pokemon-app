@@ -2,7 +2,7 @@ import AppRoutes from "./routes/AppRoutes";
 
 function Home() {
   return (
-    <div className="px-8 my-5">
+    <div className="px-8 py-5 bg-black min-h-screen">
       <AppRoutes />
     </div>
   )

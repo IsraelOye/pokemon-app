@@ -44,7 +44,7 @@ if (loading)
   const image = pokemon.sprites.other["official-artwork"].front_default;
 
   return (
-    <div>
+    <div className='text-white'>
       <button
         onClick={() => navigate("/")}
         className="flex items-center gap-1 cursor-pointer text-blue-700 "
@@ -57,21 +57,21 @@ if (loading)
       <img src={image} alt={pokemon.name} />
 
       <div>
-        <p className="text-gray-800 font-bold">
+        <p className="text-gray-300 font-bold">
           Height:
-          <span className="text-sm text-black font-normal">
+          <span className="text-sm text-white font-normal">
             &nbsp;{pokemon.height / 10} m
           </span>
         </p>
-        <p className="text-gray-800 font-bold">
+        <p className="text-gray-300 font-bold">
           Weight:
-          <span className="text-sm text-black font-normal">
-            &nbsp;{pokemon.height / 10} kg
+          <span className="text-sm text-white font-normal">
+            &nbsp;{pokemon.weight / 10} kg
           </span>
         </p>
 
         <div className="mt-3">
-          <p className="text-gray-800 font-bold">Types:</p>
+          <p className="text-gray-300 font-bold">Types:</p>
           <ul className="capitalize text-sm">
             {pokemon.types.map((t) => (
               <li key={t.type.name}>{t.type.name}</li>
@@ -80,7 +80,7 @@ if (loading)
         </div>
 
         <div className="mt-3">
-          <p className="text-gray-800 font-bold">Abilities:</p>
+          <p className="text-gray-300 font-bold">Abilities:</p>
           <ul className="capitalize text-sm">
             {pokemon.abilities.map((a) => (
               <li key={a.ability.name}>{a.ability.name}</li>
