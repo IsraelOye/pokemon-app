@@ -4,7 +4,7 @@ function PokemonCard({ pokemon }) {
   const image = pokemon.sprites.other["official-artwork"].front_default;
 
   return (
-    <div className="text-white bg-blue-500 rounded-xl p-3 flex flex-col items-center">
+    <div className="text-white flex flex-col items-center">
       <span className="text-sm md:text-lg font-medium self-start">
         #{String(pokemon.id).padStart(2, "0")}
       </span>
