@@ -4,10 +4,14 @@ function PokemonCard({ pokemon }) {
     const image = pokemon.sprites.other['official-artwork'].front_default;
 
     return (
-      <div className="">
-        <span>#{String(pokemon.id).padStart(2, "0")}</span>
-        <p className="capitalize mb-5">{pokemon.name}</p>
-        <div>
+      <div>
+        <span className="text-lg font-medium">
+          {String(pokemon.id).padStart(2, "0")}
+        </span>
+        <p className="capitalize font-medium text-lg leading-3">
+          {pokemon.name}
+        </p>
+        <div className="mb-3">
           <Link to={`/pokemon/${pokemon.id}`} className="inline-block mb-10">
             <img
               src={image}
