@@ -16,6 +16,8 @@ const PokemonDetailsPage = () => {
     const fetchDetail = async () => {
       try {
         setLoading(true);
+        // Waits 1 second before fetching
+          await new Promise((resolve) => setTimeout(resolve, 1000));
         const data = await getPokemonDetails(id);
         setPokemon(data);
       } catch (err) {
@@ -28,27 +30,45 @@ const PokemonDetailsPage = () => {
     fetchDetail();
   }, [id]);
 
-  if (loading) return <div className="loader">Loading...</div>;
-  if (error) return <div className="error">{error}</div>;
+if (loading)
+  return (
+    <div className="min-h-screen pt-2 flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-700 mx-auto mb-4"></div>
+        <p className="text-blue-700 text-lg font-medium">Loading...</p>
+      </div>
+    </div>
+  );  
+  if (error) return <div className="text-red-600 font-medium">{error}</div>;
 
   const image = pokemon.sprites.other["official-artwork"].front_default;
 
   return (
-    <div className="detail-page">
+    <div>
       <button
         onClick={() => navigate("/")}
-        className="flex items-center gap-1 cursor-pointer"
+        className="flex items-center gap-1 cursor-pointer text-blue-700 "
       >
         <FaArrowLeft />
-        <p className="font-medium">Back to List</p>
+        <p className="font-medium italic hover:underline">Back to List</p>
       </button>
 
       <h1 className="capitalize text-4xl mt-5">{pokemon.name}</h1>
       <img src={image} alt={pokemon.name} />
 
       <div>
-        <p className='text-gray-800 font-bold'>Height:<span className='text-sm text-black font-normal'> {pokemon.height / 10} m</span></p>
-        <p className='text-gray-800 font-bold'>Weight:<span className='text-sm text-black font-normal'> {pokemon.height / 10} kg</span></p>
+        <p className="text-gray-800 font-bold">
+          Height:
+          <span className="text-sm text-black font-normal">
+            &nbsp;{pokemon.height / 10} m
+          </span>
+        </p>
+        <p className="text-gray-800 font-bold">
+          Weight:
+          <span className="text-sm text-black font-normal">
+            &nbsp;{pokemon.height / 10} kg
+          </span>
+        </p>
 
         <div className="mt-3">
           <p className="text-gray-800 font-bold">Types:</p>
